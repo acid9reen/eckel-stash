@@ -1,3 +1,6 @@
+#pragma once
+
+
 struct Stash
 {
     int size;
