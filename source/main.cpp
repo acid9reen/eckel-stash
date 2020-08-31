@@ -7,8 +7,7 @@
 int main(int argc, char **argv)
 {   
     // Example with ints 
-    Stash int_stash;
-    int_stash.initialize(sizeof(int));
+    Stash int_stash(sizeof(int));
 
     for (int i = 0; i < 10; i++)
         int_stash.add(&i);
@@ -19,9 +18,9 @@ int main(int argc, char **argv)
                   << std::endl;
 
     // Example with strings
-    Stash string_stash;
     const int buf_size = 80;
-    string_stash.initialize(sizeof(char) * buf_size);
+    Stash string_stash(sizeof(char) * buf_size);
+
     std::ifstream in("../source/main.cpp");
     std::string line;
 
@@ -34,9 +33,6 @@ int main(int argc, char **argv)
     while ((cp = (char *)string_stash.fetch(k++)) != 0)
         std::cout << "string_stash.fetch(" << k << ") = "
                   << cp << std::endl;
-
-    int_stash.cleanup();
-    string_stash.cleanup();
 
     return 0;
 }

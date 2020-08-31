@@ -5,7 +5,7 @@
 
 const int INCREMENT = 100;
 
-void Stash::initialize(int _size)
+Stash::Stash(int _size)
 {
     size = _size;
     quaintity = 0;
@@ -61,7 +61,7 @@ void Stash::inflate(int increase)
     quaintity = new_quantity;
 }
 
-void Stash::cleanup()
+Stash::~Stash()
 {
     if (storage != 0)
     {
