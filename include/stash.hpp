@@ -11,7 +11,7 @@ class Stash
     void inflate(int increase);
 
 public:
-    Stash(int _size);
+    Stash(int _size, int init_size = 0);
     ~Stash();
     int add(const void* element);
     void *fetch(int index);

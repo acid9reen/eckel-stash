@@ -7,7 +7,7 @@
 int main(int argc, char **argv)
 {   
     // Example with ints 
-    Stash int_stash(sizeof(int));
+    Stash int_stash(sizeof(int), 100);
 
     for (int i = 0; i < 10; i++)
         int_stash.add(&i);

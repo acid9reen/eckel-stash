@@ -5,12 +5,13 @@
 
 const int INCREMENT = 100;
 
-Stash::Stash(int _size)
+Stash::Stash(int _size, int init_size /* = 0 */)
 {
     size = _size;
     quaintity = 0;
     storage = 0;
     next = 0;
+    inflate(init_size);
 }
 
 int Stash::add(const void *element)
